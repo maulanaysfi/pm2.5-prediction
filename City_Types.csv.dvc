@@ -1,0 +1,5 @@
+outs:
+- md5: 746184f000f8d83469cad3af5be7b57c
+  size: 4033194
+  hash: md5
+  path: City_Types.csv

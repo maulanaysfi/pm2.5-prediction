@@ -1,0 +1,5 @@
+[core]
+    remote = remote-ssh
+    autostage = true
+['remote "remote-ssh"']
+    url = ssh://ibrahim@111.10.10.100/home/ibrahim/dvc-repos/city_type
