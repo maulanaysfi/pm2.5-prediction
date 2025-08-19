@@ -13,11 +13,3 @@ jobs:
         run: |
           pip install -r requirements.txt
           dvc repro
-
-          git fetch --prune
-          dvc metrics diff --show-md origin > report.md
-
-          # add figure to the report
-          echo "## Comparing results"
-          cml-publish scatterplot_with_prediction.png --md >> report.md
-          cml-send-comment report.md
