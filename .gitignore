@@ -1,6 +1,5 @@
 .gcp/
 *.swp
-/metrics.json
 /scatterplot_with_prediction.png
 /data_preprocessed.csv
 /City_Types.csv
