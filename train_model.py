@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import ElasticNet
+from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 df = pd.read_csv('data_preprocessed.csv')
@@ -16,7 +16,7 @@ label = df[['PM2.5']]
 
 X_train, X_test, y_train, y_test = train_test_split(features, label, test_size=0.2, random_state=44)
 
-model = ElasticNet(alpha=0.5, l1_ratio=0.3, max_iter=1000, tol=1e-05)
+model = LinearRegression()
 
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
