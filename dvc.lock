@@ -3,6 +3,10 @@ stages:
   preprocess_data:
     cmd: python preprocess_data.py
     deps:
+    - path: City_Types.csv
+      hash: md5
+      md5: 746184f000f8d83469cad3af5be7b57c
+      size: 4033194
     - path: preprocess_data.py
       hash: md5
       md5: e37cc301d3f7e3904360f27928069565
@@ -30,5 +34,5 @@ stages:
       size: 84
     - path: scatterplot_with_prediction.png
       hash: md5
-      md5: a1ca8ab23011d3d25837a5af43f82704
-      size: 535313
+      md5: 889ca13b7adcdaca8a81a702678dc25d
+      size: 535181

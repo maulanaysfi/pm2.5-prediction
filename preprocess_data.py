@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('/home/ibrahim/jupyter/models/pm2_predict/City_Types.csv')
+df = pd.read_csv('City_Types.csv')
 
 df['Type'] = df['Type'].astype('category')
 

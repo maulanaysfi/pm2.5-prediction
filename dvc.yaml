@@ -3,6 +3,7 @@ stages:
     cmd: python preprocess_data.py
     deps:
     - preprocess_data.py
+    - City_Types.csv
     outs:
     - data_preprocessed.csv
   train_model:
