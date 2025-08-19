@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-df = pd.read_csv('/home/ibrahim/jupyter/models/pm2_predict/data_preprocessed.csv')
+df = pd.read_csv('data_preprocessed.csv')
 
 df['Date'] = pd.to_datetime(df['Date'])
 
