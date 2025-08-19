@@ -45,9 +45,9 @@ jobs:
           REPO_TOKEN: ${{ secrets.PAT_GITHUB }}
         run: |
           # Post reports as comments in GitHub PRs
-          echo -e "## Current model performance"
+          echo -e "## Current model performance" >> report.md
           echo "![](scatterplot_with_prediction.png)" >> report.md
 
-          echo -e "## Metrics comparison (current branch vs main)"
+          echo -e "## Metrics comparison (current branch vs main)" >> report.md
           dvc metrics diff main --md >> report.md
           cml comment create report.md
