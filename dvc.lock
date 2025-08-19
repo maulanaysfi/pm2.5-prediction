@@ -34,5 +34,5 @@ stages:
       size: 84
     - path: scatterplot_with_prediction.png
       hash: md5
-      md5: a1ca8ab23011d3d25837a5af43f82704
-      size: 535313
+      md5: 6978338d91bff0edf2efcba7af52e974
+      size: 535331
