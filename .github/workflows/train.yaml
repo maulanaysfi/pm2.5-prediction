@@ -22,13 +22,22 @@ jobs:
           EOF
       
       - name: Setup DVC remote credentials
-        run:
+        run: |
           dvc remote modify --local gcp-bucket-1 credentialpath key.json
       
       - name: Pulling dataset from bucket
-        run:
+        run: |
           dvc pull
 
       - name: Reproducing pipeline
-        run: 
+        run: |
           dvc repro
+      
+      - name: Write CML report
+        env:
+          REPO_TOKEN: ${{ secrets.PAT_GITHUB }}
+        run: |
+          # Post reports as comments in GitHub PRs
+          # cat results.txt >> report.md
+          echo "![](scatterplot_with_prediction.png)" >> report.md
+          cml comment create report.md
