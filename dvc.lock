@@ -9,8 +9,8 @@ stages:
       size: 4033194
     - path: preprocess_data.py
       hash: md5
-      md5: e37cc301d3f7e3904360f27928069565
-      size: 1092
+      md5: 66a9ea227eee0b540498200ff78b1aeb
+      size: 1051
     outs:
     - path: data_preprocessed.csv
       hash: md5
@@ -25,14 +25,14 @@ stages:
       size: 3249327
     - path: train_model.py
       hash: md5
-      md5: 13431f3a7688dfd60c7ce32b30dc52c2
-      size: 1612
+      md5: 629529e3baa28573a8f0f99aab6537ae
+      size: 1534
     outs:
     - path: metrics.json
       hash: md5
-      md5: bcabc2c9cd781238336a0d2d61e51f60
-      size: 84
+      md5: 129782acbb8bd23ffa53ca1a61e05bae
+      size: 83
     - path: scatterplot_with_prediction.png
       hash: md5
-      md5: 889ca13b7adcdaca8a81a702678dc25d
-      size: 535181
+      md5: 463b0747f17dae8d73e62ec94cc78671
+      size: 535254
