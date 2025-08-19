@@ -1,5 +1,7 @@
 name: pm2.5-prediction
-on: [push]
+on: 
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -32,12 +34,20 @@ jobs:
       - name: Reproducing pipeline
         run: |
           dvc repro
+
+      - name: Fetching main branch metrics
+        run: |
+          git config --global --add safe.directory /__w/pm2.5-prediction/pm2.5-prediction
+          git fetch --prune
       
-      - name: Write CML report
+      - name: Write reports and metrics with CML
         env:
           REPO_TOKEN: ${{ secrets.PAT_GITHUB }}
         run: |
           # Post reports as comments in GitHub PRs
-          # cat results.txt >> report.md
+          echo -e "## Current model performance"
           echo "![](scatterplot_with_prediction.png)" >> report.md
+
+          echo -e "## Metrics comparison (current branch vs main)"
+          dvc metrics diff main --md >> report.md
           cml comment create report.md

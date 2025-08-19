@@ -25,14 +25,14 @@ stages:
       size: 3249327
     - path: train_model.py
       hash: md5
-      md5: 629529e3baa28573a8f0f99aab6537ae
-      size: 1534
+      md5: c8ef5982d4985ec44d0ffaf9fc222b02
+      size: 1571
     outs:
     - path: metrics.json
       hash: md5
-      md5: 129782acbb8bd23ffa53ca1a61e05bae
-      size: 83
+      md5: bcabc2c9cd781238336a0d2d61e51f60
+      size: 84
     - path: scatterplot_with_prediction.png
       hash: md5
-      md5: 463b0747f17dae8d73e62ec94cc78671
-      size: 535254
+      md5: 7cf7fea21d53bd452a9c1d3da1b0fbce
+      size: 535203
