@@ -1,0 +1,23 @@
+name: pm2.5-prediction
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container: ghcr.io/iterative/cml:0-dvc2-base1
+    steps:
+      - uses: actions/checkout@v3
+      # - uses: iterative/setup-cml@v1
+      - name: Train-Write CML report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install -r requirements.txt
+          dvc repro
+
+          git fetch --prune
+          dvc metrics diff --show-md origin > report.md
+
+          # add figure to the report
+          echo "## Comparing results"
+          cml-publish scatterplot_with_prediction.png --md >> report.md
+          cml-send-comment report.md
