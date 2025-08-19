@@ -1,2 +1,4 @@
 *.csv
 *.swp
+/metrics.json
+/scatterplot_with_prediction.png

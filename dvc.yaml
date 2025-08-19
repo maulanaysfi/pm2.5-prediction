@@ -1,0 +1,17 @@
+stages:
+  preprocess_data:
+    cmd: python preprocess_data.py
+    deps:
+    - preprocess_data.py
+    outs:
+    - data_preprocessed.csv
+  train_model:
+    cmd: python train_model.py
+    deps:
+    - data_preprocessed.csv
+    - train_model.py
+    outs:
+    - scatterplot_with_prediction.png
+    metrics:
+    - metrics.json:
+        cache: false
