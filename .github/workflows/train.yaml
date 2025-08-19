@@ -6,11 +6,24 @@ jobs:
     container: ghcr.io/iterative/cml:latest
     steps:
       - uses: actions/checkout@v3
-      - name: Train-Write CML report
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+      - name: Install dependencies
+        run:
           pip install -r requirements.txt
-          dvc fetch
+
+      - name: Setup GCP Credentials
+        env:
+          GCP_KEY_JSON: ${{ secrets.GCP_KEY_JSON }}
+        run: |
+          echo $GCP_KEY_JSON > key.json
+      
+      - name: Setup DVC remote credentials
+        run:
+          dvc remote modify --local gcp-bucket-1 credentialpath key.json
+      
+      - name: Pulling dataset from bucket
+        run:
           dvc pull
+
+      - name: Reproducing pipeline
+        run: 
           dvc repro
