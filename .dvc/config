@@ -4,4 +4,4 @@
 ['remote "remote-ssh"']
     url = ssh://ibrahim@111.10.10.100/home/ibrahim/dvc-repos/city_type
 ['remote "gcp-bucket-1"']
-    url = gs://maulanaysfi-bucket-1/dvc-repos/pm2-predict
+    url = gs://maulanaysfi-dvc-bucket-1/pm2-predict
